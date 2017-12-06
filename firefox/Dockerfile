@@ -14,7 +14,7 @@ RUN mkdir /home/firefoxuser/.mozilla
 RUN x11vnc -storepasswd 1234 ~/.vnc/passwd
 # autostart
 ADD firefox.sh /etc/X11/Xsession.d/startup-local
-RUN chmod 755 /etc/X11/Xsession.d/startup
+RUN chmod 755 /etc/X11/Xsession.d/startup-local
 
 # document port
 EXPOSE 5900
