@@ -20,4 +20,4 @@ RUN chmod 755 /etc/X11/Xsession.d/30startupfirefox
 EXPOSE 5900
 
 # switch -once into -forever if you want a persistent browser, add -proxy if you need one
-CMD ["x11vnc", "-once", "-usepw", "-create", "-noipv6",]
+CMD ["x11vnc", "-once", "-usepw", "-create", "-noipv6"]
