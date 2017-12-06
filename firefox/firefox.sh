@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sudo -u firefoxuser firefox &
+sudo -u firefoxuser firefox
