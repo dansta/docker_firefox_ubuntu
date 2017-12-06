@@ -6,6 +6,7 @@ FROM ubuntu:latest
 # Install vnc, xvfb in order to create a 'fake' display
 # Firefox and sudo because we dont want to run firefox as root
 RUN apt-get update && apt-get install -y x11vnc xvfb firefox sudo
+RUN groupadd firefoxgroup
 RUN useradd -m firefoxuser -G firefoxgroup -d /home/firefoxuser/
 RUN mkdir ~/.vnc
 # cache and settings for firefox
