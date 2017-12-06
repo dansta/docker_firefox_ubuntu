@@ -8,13 +8,13 @@ FROM ubuntu:latest
 RUN apt-get update && apt-get install -y x11vnc xvfb firefox sudo
 RUN groupadd firefoxgroup
 RUN useradd -m firefoxuser -G firefoxgroup -d /home/firefoxuser/
-RUN mkdir ~/.vnc
+RUN mkdir /root/.vnc
 # cache and settings for firefox
 RUN mkdir /home/firefoxuser/.mozilla
-RUN x11vnc -storepasswd 1234 ~/.vnc/passwd
+RUN x11vnc -storepasswd 1234 /root/.vnc/passwd
 # autostart
-ADD firefox.sh /etc/X11/Xsession.d/startup-local
-RUN chmod 755 /etc/X11/Xsession.d/startup-local
+ADD firefox.sh /etc/X11/Xsession.d/30startupfirefox
+RUN chmod 755 /etc/X11/Xsession.d/30startupfirefox
 
 # document port
 EXPOSE 5900
